@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Battery</string>
+    <string name="app_name">Theo dõi pin</string>
+    <string name="notification">Theo dõi pin</string>
+    <string name="notification_description">Dịch vụ chạy ngầm để theo dõi pin của bạn.</string>
+    <string name="Dang_dung">Đang dùng:</string>
+    <string name="Dang_sac">Đang sạc:</string>
+    <string name="Dung_luong">Dung lượng:</string>
+    <string name="unit">mAh \n</string>
+    <string name="sac_nhanh">Sạc nhanh</string>
+    <string name="sac_thuong">Sạc thường</string>
+    <string name="sac_cham">Sạc chậm</string>
 </resources>

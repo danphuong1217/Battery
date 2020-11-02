@@ -1,18 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <TextView
+    <com.github.anastr.speedviewlib.PointerSpeedometer
+        android:id="@+id/speedViewMah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:sv_backgroundCircleColor="#00FFFFFF"
+        app:sv_textColor="@color/black"
+        app:sv_centerCircleColor="@color/teal_200"
+        app:sv_indicatorColor="@color/teal_200"
+        app:sv_markColor="@color/teal_200"
+        app:sv_pointerColor="@color/teal_200"
+        app:sv_speedometerColor="@color/purple_200"
+        app:sv_indicatorLightColor="@color/teal_200"
+        app:sv_unitTextColor="@color/teal_200"
+        app:sv_speedTextColor="@color/purple_200"
+        app:sv_maxSpeed="3000000"
+        app:sv_withPointer="true"
+        app:sv_centerCircleRadius="@dimen/cardview_default_radius"
+        app:sv_withTremble="false"
+        app:sv_unit="mAh"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.github.anastr.speedviewlib.PointerSpeedometer
+        android:id="@+id/speedViewcharg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:sv_backgroundCircleColor="#00FFFFFF"
+        app:sv_textColor="@color/black"
+        app:sv_centerCircleColor="@color/teal_200"
+        app:sv_indicatorColor="@color/teal_200"
+        app:sv_markColor="@color/teal_200"
+        app:sv_pointerColor="@color/teal_200"
+        app:sv_speedometerColor="@color/purple_200"
+        app:sv_indicatorLightColor="@color/teal_200"
+        app:sv_unitTextColor="@color/teal_200"
+        app:sv_speedTextColor="@color/purple_200"
+        app:sv_maxSpeed="5000000"
+        app:sv_minSpeed="-5000000"
+        app:sv_withPointer="true"
+        app:sv_centerCircleRadius="@dimen/cardview_default_radius"
+        app:sv_withTremble="false"
+        app:sv_unit="mAh"/>
+</LinearLayout>
