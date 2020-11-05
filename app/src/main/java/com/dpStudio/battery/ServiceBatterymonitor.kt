@@ -11,6 +11,7 @@ import android.graphics.drawable.Icon
 import android.os.BatteryManager
 import android.os.Build
 import android.os.IBinder
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -47,12 +48,12 @@ class ServiceBatterymonitor : Service() {
                 val dungluong = (batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CHARGE_COUNTER) / 1000)
                 val percent = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY).toString();
                 var content = buildContent(context,currentA, dungluong)
-                var subtext = buildSubtitle(context, currentA)
+                var subtext = buildSubtitle(context, currentA / 1000)
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                     updateNotification(context, content, currentA, subtext)
                 };
             }
-        }, 1000, 1000)
+        }, 3000, 3000)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -101,12 +102,15 @@ class ServiceBatterymonitor : Service() {
     /**
      * subtext notification
      */
-    fun buildSubtitle(context: Context, curentA : Int): String = if(curentA > 2000) {
-        context.getString(R.string.sac_nhanh)
-    } else if (curentA > 500) {
-        context.getString(R.string.sac_thuong)
-    } else {
-        context.getString(R.string.sac_cham)
-    }
+    fun buildSubtitle(context: Context, curentA : Int): String = if (curentA > 0) {
+            context.getString(R.string.dang_dung)
+        } else if(curentA < -2000) {
+        Log.d("dannvb", curentA.toString());
+            context.getString(R.string.sac_nhanh)
+        } else if (curentA < -500) {
+            context.getString(R.string.sac_thuong)
+        } else {
+            context.getString(R.string.sac_cham)
+        }
 
 }

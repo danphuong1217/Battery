@@ -9,4 +9,5 @@
     <string name="sac_nhanh">Sạc nhanh</string>
     <string name="sac_thuong">Sạc thường</string>
     <string name="sac_cham">Sạc chậm</string>
+    <string name="dang_dung">Đang dùng</string>
 </resources>

@@ -7,44 +7,57 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <com.github.anastr.speedviewlib.PointerSpeedometer
-        android:id="@+id/speedViewMah"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:sv_backgroundCircleColor="#00FFFFFF"
-        app:sv_textColor="@color/black"
-        app:sv_centerCircleColor="@color/teal_200"
-        app:sv_indicatorColor="@color/teal_200"
-        app:sv_markColor="@color/teal_200"
-        app:sv_pointerColor="@color/teal_200"
-        app:sv_speedometerColor="@color/purple_200"
-        app:sv_indicatorLightColor="@color/teal_200"
-        app:sv_unitTextColor="@color/teal_200"
-        app:sv_speedTextColor="@color/purple_200"
-        app:sv_maxSpeed="3000000"
-        app:sv_withPointer="true"
-        app:sv_centerCircleRadius="@dimen/cardview_default_radius"
-        app:sv_withTremble="false"
-        app:sv_unit="mAh"/>
+        android:orientation="vertical"
+        android:background="@color/back_ground"
+        android:gravity="center">
 
-    <com.github.anastr.speedviewlib.PointerSpeedometer
-        android:id="@+id/speedViewcharg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:sv_backgroundCircleColor="#00FFFFFF"
-        app:sv_textColor="@color/black"
-        app:sv_centerCircleColor="@color/teal_200"
-        app:sv_indicatorColor="@color/teal_200"
-        app:sv_markColor="@color/teal_200"
-        app:sv_pointerColor="@color/teal_200"
-        app:sv_speedometerColor="@color/purple_200"
-        app:sv_indicatorLightColor="@color/teal_200"
-        app:sv_unitTextColor="@color/teal_200"
-        app:sv_speedTextColor="@color/purple_200"
-        app:sv_maxSpeed="5000000"
-        app:sv_minSpeed="-5000000"
-        app:sv_withPointer="true"
-        app:sv_centerCircleRadius="@dimen/cardview_default_radius"
-        app:sv_withTremble="false"
-        app:sv_unit="mAh"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <com.github.anastr.speedviewlib.SpeedView
+                android:id="@+id/sv_activity_main_charge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                style="@style/gauleStyle"
+                app:sv_maxSpeed="3000" />
+
+            <com.github.anastr.speedviewlib.PointerSpeedometer
+                android:id="@+id/sv_activity_main_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                style="@style/gauleStyle"
+                app:sv_maxSpeed="3000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_activity_main_status_charge"
+                style="@style/textViewMain"/>
+
+            <TextView
+                android:id="@+id/tv_activity_main_status_dung_luong"
+                style="@style/textViewMain"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

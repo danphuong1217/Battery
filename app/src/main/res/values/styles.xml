@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="gauleStyle">
+        <item name="sv_unit">@string/unit</item>
+        <item name="sv_centerCircleColor">@color/tranfer</item>
+        <item name="sv_indicator">NeedleIndicator</item>
+        <item name="sv_withTremble">false</item>
+        <item name="sv_indicatorWidth">5dp</item>
+        <item name="sv_withIndicatorLight">true</item>
+        <item name="sv_indicatorLightColor">#E91E63</item>
+        <item name="sv_speedTextFormat">INTEGER</item>
+        <item name="sv_unitUnderSpeedText">true</item>
+        <item name="sv_backgroundCircleColor">@color/back_ground</item>
+        <item name="sv_textColor">@color/white</item>
+        <item name="sv_speedometerColor">@color/yellow</item>
+        <item name="sv_speedometerWidth">10dp</item>
+        <item name="sv_speedTextColor">@color/white</item>
+        <item name="sv_unitTextColor">@color/white</item>
+        <item name="sv_tickNumber">5</item>
+    </style>
+
+    <style name="textViewMain">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
+        <item name="android:background">#ff0000</item>
+        <item name="android:colorBackground">#ff0000</item>
+    </style>
+    <style name="AppTheme.ActionBar" parent="android:Widget.ActionBar">
+        <item name="android:background">#ff0000</item>
+    </style>
+</resources>
