@@ -60,4 +60,112 @@
 
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+             <LinearLayout
+                android:orientation="horizontal"
+                style="@style/layoutTextViewMainBatteryInfo">
+
+                 <ImageView
+                     style="@style/IconTextViewMainBatteryInfo"
+                     android:src="@drawable/max"/>
+
+                <TextView
+                   style="@style/textViewMainBatteryInfo"
+                    android:text="@string/tinh_trang"/>
+
+                <TextView
+                    android:id="@+id/tv_activity_main_status"
+                    style="@style/textViewMainBatteryInfo"
+                    android:text="@string/dang_do" />
+
+            </LinearLayout>
+
+             <LinearLayout
+                android:orientation="horizontal"
+                style="@style/layoutTextViewMainBatteryInfo">
+
+                 <ImageView
+                     style="@style/IconTextViewMainBatteryInfo"
+                     android:src="@drawable/batteryhelth"/>
+
+                <TextView
+                   style="@style/textViewMainBatteryInfo"
+                    android:text="@string/temp"/>
+
+                <TextView
+                    android:id="@+id/tv_activity_main_temp"
+                    style="@style/textViewMainBatteryInfo"
+                    android:text="@string/dang_do"/>
+
+            </LinearLayout>
+
+             <LinearLayout
+                android:orientation="horizontal"
+                style="@style/layoutTextViewMainBatteryInfo">
+
+                 <ImageView
+                     style="@style/IconTextViewMainBatteryInfo"
+                     android:src="@drawable/max"/>
+
+                <TextView
+                   style="@style/textViewMainBatteryInfo"
+                    android:text="@string/health"/>
+
+                <TextView
+                    android:id="@+id/tv_activity_main_health"
+                    style="@style/textViewMainBatteryInfo"
+                    android:text="@string/dang_do"/>
+
+            </LinearLayout>
+
+             <LinearLayout
+                android:orientation="horizontal"
+                style="@style/layoutTextViewMainBatteryInfo">
+
+                 <ImageView
+                     style="@style/IconTextViewMainBatteryInfo"
+                     android:src="@drawable/techicon"/>
+
+                <TextView
+                   style="@style/textViewMainBatteryInfo"
+                    android:text="@string/Dung_luong"/>
+
+                <TextView
+                    android:id="@+id/tv_activity_main_max_capitacy"
+                    style="@style/textViewMainBatteryInfo"
+                    android:text="@string/dang_do"/>
+
+            </LinearLayout>
+
+             <LinearLayout
+                android:orientation="horizontal"
+                style="@style/layoutTextViewMainBatteryInfo">
+
+                 <ImageView
+                     style="@style/IconTextViewMainBatteryInfo"
+                     android:src="@drawable/max"/>
+
+                <TextView
+                   style="@style/textViewMainBatteryInfo"
+                    android:text="@string/teck"/>
+
+                <TextView
+                    android:id="@+id/tv_activity_main_tech"
+                    style="@style/textViewMainBatteryInfo"
+                    android:text="@string/dang_do"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        
+    </ScrollView>
+
 </LinearLayout>
