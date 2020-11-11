@@ -49,7 +49,7 @@ object Utils{
 
     fun initQuangCaoTrungGian(context: Context) : InterstitialAd {
         val interitalAds = InterstitialAd(context)
-        interitalAds.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        interitalAds.adUnitId = context.getString(R.string.id_quang_cao_trung_gian)
         interitalAds.loadAd(AdRequest.Builder().build())
         return interitalAds
     }
