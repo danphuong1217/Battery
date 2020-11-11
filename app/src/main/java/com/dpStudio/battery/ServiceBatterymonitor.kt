@@ -15,8 +15,7 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.dpStudio.battery.Contrants
-import com.dpStudio.battery.R
+import com.dpStudio.battery.util.Contrants
 import java.util.*
 
 
@@ -31,7 +30,7 @@ class ServiceBatterymonitor : Service() {
         notificationManager = NotificationManagerCompat.from(this)
         batteryManager = getSystemService(BATTERY_SERVICE) as BatteryManager
         var builder = NotificationCompat.Builder(this, Contrants.CHANNEL_ID_BATTERY_MONITOR)
-                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setSmallIcon(R.drawable.max)
                 .setContentText("")
         startForeground(1122, builder.build())
         timerMeasureBattery(applicationContext)
@@ -46,7 +45,6 @@ class ServiceBatterymonitor : Service() {
             override fun run() {
                 val currentA = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW)
                 val dungluong = (batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CHARGE_COUNTER) / 1000)
-                val percent = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY).toString();
                 var content = buildContent(context,currentA, dungluong)
                 var subtext = buildSubtitle(context, currentA / 1000)
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -69,9 +67,9 @@ class ServiceBatterymonitor : Service() {
     fun textAsBitmap(context: Context, text: Int): Bitmap? {
         var color: Int = 0;
         if (text > 0) {
-            color = R.color.yellow
+            color = R.color.use_battery_notification
         } else {
-            color = R.color.green
+            color = R.color.charng_battery_notification
         }
         var icon = (Math.abs(text) / 1000).toString()
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -105,7 +103,6 @@ class ServiceBatterymonitor : Service() {
     fun buildSubtitle(context: Context, curentA : Int): String = if (curentA > 0) {
             context.getString(R.string.dang_dung)
         } else if(curentA < -2000) {
-        Log.d("dannvb", curentA.toString());
             context.getString(R.string.sac_nhanh)
         } else if (curentA < -500) {
             context.getString(R.string.sac_thuong)

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Battery Moniter</string>
     <string name="notification">Battery Moniter</string>
@@ -5,7 +6,6 @@
     <string name="Dang_dung">Using:</string>
     <string name="Dang_sac">"Charging: "</string>
     <string name="Dung_luong">Capacity:</string>
-    <string name="unit" translatable="false">mAh</string>
     <string name="sac_nhanh">Fast charging</string>
     <string name="sac_thuong">Normal charging</string>
     <string name="sac_cham">Charging is slow</string>
@@ -22,6 +22,4 @@
     <string name="status_batery_dead">The battery is damaged</string>
     <string name="status_batery_hot">The battery is too hot</string>
     <string name="status_batery_voltage">Overvoltage battery unplug immediately</string>
-    <string name="id_banner_ads" translatable="false"></string>
-    <string name="id_quang_cao_trung_gian" translatable="false">ca-app-pub-8442247234256308/2777615110</string>
 </resources>

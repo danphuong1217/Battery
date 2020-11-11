@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Theo dõi pin</string>
+    <string name="notification">Theo dõi pin</string>
+    <string name="notification_description">Dịch vụ chạy ngầm để theo dõi pin của bạn.</string>
+    <string name="Dang_dung">Đang dùng:</string>
+    <string name="Dang_sac">Đang sạc:</string>
+    <string name="Dung_luong">Dung lượng:</string>
+    <string name="sac_nhanh">Sạc nhanh</string>
+    <string name="sac_thuong">Sạc thường</string>
+    <string name="sac_cham">Sạc chậm</string>
+    <string name="dang_dung">Đang dùng</string>
+    <string name="tinh_trang">Tình trạng</string>
+    <string name="muc_pin">Mức pin</string>
+    <string name="temp">"Nhiệt độ "</string>
+    <string name="health">Tình trạng pin</string>
+    <string name="capacity">Dung lượng pin</string>
+    <string name="teck">Công nghệ pin</string>
+    <string name="dang_do">Đang đo...</string>
+    <string name="status_batery_good">Pin tốt</string>
+    <string name="status_batery_cold">Nhiệt độ quá thấp</string>
+    <string name="status_batery_dead">Pin đã hỏng</string>
+    <string name="status_batery_hot">Pin quá nóng</string>
+    <string name="status_batery_voltage">Pin quá áp rút sạc ngay</string>
+</resources>

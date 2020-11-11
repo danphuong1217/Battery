@@ -11,4 +11,15 @@
     <color name="green">#4CAF50</color>
     <color name="yellow">#FFEB3B</color>
     <color name="back_ground">#568758</color>
+    <color name="charng_battery_notification">#88FF00</color>
+    <color name="use_battery_notification">#FF3D00</color>
+
+<!--    color Speed View-->
+    <color name="slow_charge">#0027FF</color>
+    <color name="normal_charge">#03A9F4</color>
+    <color name="fast_charge">#00BCD4</color>
+
+    <color name="slow_use">#00FF22</color>
+    <color name="normal_use">#F4CC03</color>
+    <color name="fast_use">#FF2414</color>
 </resources>

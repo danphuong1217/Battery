@@ -1,10 +1,11 @@
-package com.dpStudio.battery
+package com.dpStudio.battery.util
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
+import com.dpStudio.battery.R
 
 object Contrants {
     val CHANNEL_ID_BATTERY_MONITOR = "chanel_id_monitor"
@@ -14,7 +15,7 @@ object Contrants {
             val name = context.getString(R.string.notification)
             val descriptionText = context.getString(R.string.notification_description)
             val importance = NotificationManager.IMPORTANCE_LOW
-            val channel = NotificationChannel( CHANNEL_ID_BATTERY_MONITOR, name, importance).apply {
+            val channel = NotificationChannel(CHANNEL_ID_BATTERY_MONITOR, name, importance).apply {
                 description = descriptionText
             }
             // Register the channel with the system

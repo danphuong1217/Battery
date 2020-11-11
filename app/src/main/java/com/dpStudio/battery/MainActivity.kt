@@ -5,12 +5,21 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.graphics.Color
 import android.os.BatteryManager
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.dpStudio.battery.util.Contrants
+import com.dpStudio.battery.util.Utils
 import com.github.anastr.speedviewlib.PointerSpeedometer
 import com.github.anastr.speedviewlib.SpeedView
+import com.github.anastr.speedviewlib.components.Style
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 import java.util.*
 
 
@@ -21,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var tvStatus : TextView
     lateinit var tvDungLuong : TextView
     lateinit var tvstatus2 : TextView
+    lateinit var interstitialAd: InterstitialAd
 
     companion object {
         lateinit var tvtemp: TextView
@@ -33,6 +43,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initAll()
+        initClick()
+    }
+
+    private fun initClick() {
+        svChanger.setOnClickListener {
+            if (interstitialAd.isLoaded) {
+                interstitialAd.show()
+            }
+        }
+
+        svDungluong.setOnClickListener {
+            if (interstitialAd.isLoaded) {
+                interstitialAd.show()
+            }
+        }
     }
 
     fun initView() {
@@ -55,6 +80,9 @@ class MainActivity : AppCompatActivity() {
         startService(Intent(applicationContext, ServiceBatterymonitor::class.java))
         measure()
         resignBroadCast()
+        Utils.initAds(applicationContext)
+        Utils.initBannerAds(applicationContext, findViewById(R.id.av_activity_main_banner))
+        interstitialAd = Utils.initQuangCaoTrungGian(applicationContext)
     }
 
     fun measure() {
@@ -67,6 +95,8 @@ class MainActivity : AppCompatActivity() {
                     svChanger.speedTo(Math.abs(currentA) * 1f)
                     svDungluong.speedTo(dungluong * 1f)
                     setStatus(applicationContext, currentA, percent)
+                    val isCharge = if (currentA > 0) false else true
+                    setSpeedChanrgeColor(isCharge)
                 })
             }
         }, 1000, 1000)
@@ -108,7 +138,6 @@ class MainActivity : AppCompatActivity() {
         override fun onReceive(context: Context?, intent: Intent?) {
           tvtemp.text = "${intent?.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0)?.div(10)} °C"
             tvhealth.text = getHealthBattery(context!!, intent?.getIntExtra(BatteryManager.EXTRA_HEALTH, 0)!!)
-//            tvMaxCap = "${intent?.getIntExtra(BatteryManager.EX, 0)} mAh"
             tvtech.text = "${intent?.getStringExtra(BatteryManager.EXTRA_TECHNOLOGY)}"
         }
 
@@ -123,4 +152,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun setSpeedChanrgeColor(isCharge : Boolean) {
+        if (isCharge) {
+            svChanger.makeSections(5, Color.CYAN, Style.BUTT)
+            svChanger.sections[0].color = getColor(R.color.slow_charge)
+            svChanger.sections[1].color = getColor(R.color.normal_charge)
+            svChanger.sections[2].color = getColor(R.color.normal_charge)
+            svChanger.sections[3].color = getColor(R.color.fast_charge)
+            svChanger.sections[4].color = getColor(R.color.fast_charge)
+        } else {
+            svChanger.makeSections(5, Color.RED, Style.BUTT)
+            svChanger.sections[0].color = getColor(R.color.slow_use)
+            svChanger.sections[1].color = getColor(R.color.normal_use)
+            svChanger.sections[2].color = getColor(R.color.normal_use)
+            svChanger.sections[3].color = getColor(R.color.fast_use)
+            svChanger.sections[4].color = getColor(R.color.fast_use)
+        }
+    }
+
+
 }
