@@ -12,12 +12,16 @@ object Utils{
      * subtext notification
      */
     fun buildSubtitle(context: Context, curentA : Int): String = if (curentA > 0) {
+        Log.d("dannvb1", curentA.toString())
         context.getString(R.string.dang_dung)
     } else if(curentA < -2000) {
+        Log.d("dannvb2", curentA.toString())
         context.getString(R.string.sac_nhanh)
     } else if (curentA < -500) {
+        Log.d("dannvb3", curentA.toString())
         context.getString(R.string.sac_thuong)
     } else {
+        Log.d("dannvb4", curentA.toString())
         context.getString(R.string.sac_cham)
     }
 

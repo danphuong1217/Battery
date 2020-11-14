@@ -24,4 +24,6 @@
     <string name="status_batery_voltage">Overvoltage battery unplug immediately</string>
     <string name="id_banner_ads" translatable="false"></string>
     <string name="id_quang_cao_trung_gian" translatable="false">ca-app-pub-8442247234256308/2777615110</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

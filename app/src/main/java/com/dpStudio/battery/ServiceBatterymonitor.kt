@@ -50,6 +50,7 @@ class ServiceBatterymonitor : Service() {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                     updateNotification(context, content, currentA, subtext)
                 };
+                sendIntentWidget(currentA);
             }
         }, 3000, 3000)
     }
@@ -110,4 +111,10 @@ class ServiceBatterymonitor : Service() {
             context.getString(R.string.sac_cham)
         }
 
+    fun sendIntentWidget(currentA: Int) {
+        val intent = Intent();
+        intent.setAction("android.appwidget.action.APPWIDGET_UPDATE")
+        intent.putExtra("EXTRA_CURRENT_A",currentA)
+        sendBroadcast(intent)
+    }
 }

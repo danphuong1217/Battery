@@ -22,4 +22,10 @@
     <color name="slow_use">#00FF22</color>
     <color name="normal_use">#F4CC03</color>
     <color name="fast_use">#FF2414</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+
+    <color name="backgroud_head_widget">#2C672E</color>
 </resources>
